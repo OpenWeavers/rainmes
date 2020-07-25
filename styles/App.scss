@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;800&display=swap');
+@import "scrollbar";
+@import "colors";
+
+$breakpoint-tablet: 991px;
+$breakpoint-mobile: 768px;
+
+* {
+  font-family: Roboto sans-serif;
+  //font-size: 1.1rem;
+  font-weight: 300;
+}
+
+html {
+  overflow: hidden;
+  width: 100vw;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem !important;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 1.8rem !important;
+  font-weight: 400;
+}
+
+h3 {
+  font-size: 1.4rem !important;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 1.3rem !important;
+  font-weight: 300;
+}
+
+h5 {
+  font-size: 1.2rem !important;
+  font-weight: 300;
+}
+
+h6 {
+  font-size: 1.1rem !important;
+  font-weight: 300;
+}
