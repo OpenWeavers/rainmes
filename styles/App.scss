@@ -203,3 +203,142 @@ h6 {
     }
   }
 }
+
+.NavBar {
+  width: 100%;
+  z-index: 1;
+
+  nav {
+    margin: 0 auto;
+    background: $color-main;
+    color: $color-active;
+    padding: .5em 1em;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    @include grid-center;
+
+    .logo {
+      height: 35px;
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    *:hover, *:focus {
+      font-weight: 400;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+
+      &.active {
+        color: $color-pure;
+        font-weight: 400;
+      }
+    }
+
+    .menu {
+      grid-column: 3;
+      display: flex;
+      align-items: center;
+
+      a {
+        padding: .5em;
+      }
+    }
+
+    svg {
+      width: 40px;
+    }
+
+    .Avatar-container {
+      .dropdown-menu {
+        background: $color-active;
+        color: $color-main;
+        position: absolute;
+        list-style: none;
+        margin-top: .55rem;
+        padding: 0;
+        right: 0;
+        z-index: 1;
+        transform: rotateX(-90deg);
+        transform-origin: top center;
+        transition: 240ms all ease-in-out;
+        opacity: 0.3;
+
+        li {
+          padding: 0.4em 0.2em;
+        }
+      }
+
+      &:hover, &:focus-within {
+        .dropdown-menu {
+          opacity: 1;
+          transform: rotateX(0);
+        }
+      }
+    }
+
+    .Avatar {
+      grid-gap: 0.2em;
+      height: 100%;
+      padding-left: 1em;
+
+      img {
+        height: 40px;
+        grid-row: 1;
+      }
+
+      .name {
+        grid-row: 1;
+        font: inherit;
+      }
+    }
+
+    #nav-toggle, .burger-menu {
+      display: none;
+    }
+
+    @media only screen and (max-width: $breakpoint-mobile) {
+      .Avatar-container {
+        & > .dropdown-menu {
+          width: 100%;
+          text-align: center;
+
+          li {
+            margin-top: 0.2em;
+            padding: 0.5em;
+          }
+        }
+
+        .Avatar {
+          padding: 0;
+        }
+      }
+
+      .burger-menu {
+        display: inline-block;
+        grid-column: 3;
+      }
+
+      .logo {
+        grid-column: span 2;
+      }
+
+      .menu {
+        display: none;
+      }
+
+      #nav-toggle:checked ~ .menu {
+        display: grid;
+        align-self: center;
+        grid-row: 2;
+        padding-top: 1em;
+        width: 100%;
+        grid-column: span 2;
+        @include grid-center;
+      }
+    }
+  }
+}
