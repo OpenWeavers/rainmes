@@ -183,3 +183,23 @@ h6 {
     }
   }
 }
+
+.Avatar-container {
+  outline: none;
+  .Avatar {
+    display: inline-grid;
+    text-align: center;
+    @include grid-center;
+
+    img {
+      height: 10em;
+      border-radius: 50%;
+    }
+
+    .name {
+      padding-top: 0.3em;
+      font-size: 1.3em;
+      font-weight: 400;
+    }
+  }
+}
