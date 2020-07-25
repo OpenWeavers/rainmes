@@ -52,3 +52,17 @@ h6 {
   font-size: 1.1rem !important;
   font-weight: 300;
 }
+
+.Button {
+  align-self: center;
+  background: $color-pure;
+  border: 1px solid $color-main;
+  justify-content: center;
+  padding: .75rem 3rem;
+  outline: none;
+
+  &:hover, &:focus {
+    background: $color-main;
+    color: $color-pure;
+  }
+}
