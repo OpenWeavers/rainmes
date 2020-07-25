@@ -434,3 +434,10 @@ h6 {
     }
   }
 }
+
+.StationList {
+  display: inline-flex;
+  flex-direction: column;
+  height: 100%;
+  background: $color-inactive;
+}
