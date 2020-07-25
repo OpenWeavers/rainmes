@@ -391,3 +391,46 @@ h6 {
     }
   }
 }
+
+.StationInfo {
+  display: grid;
+  @include grid-center;
+  text-align: center;
+
+  #header {
+    grid-row: 1;
+
+    span {
+      display: inline-block;
+      font-size: 0.6em;
+      margin-left: 1ch;
+    }
+  }
+
+
+  #chart {
+    grid-row: 2;
+    width: 100%;
+  }
+
+  #stats {
+    margin-top: 2em;
+    grid-row: 3;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    overflow-x: auto;
+
+    & > * {
+      margin-left: 1ch;
+      margin-bottom: 1ch;
+    }
+
+    @media screen and (max-width: $breakpoint-mobile) {
+      flex-wrap: wrap;
+      & > * {
+        margin-left: 0;
+      }
+    }
+  }
+}
