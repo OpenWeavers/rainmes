@@ -134,3 +134,52 @@ h6 {
     justify-self: right;
   }
 }
+
+.Card {
+  background: $color-main;
+  color: $color-normal;
+  display: inline-grid;
+  grid-template-areas: "value" "description";
+  @include grid-center;
+  padding: 1rem 3rem 1.5rem 3rem;
+  max-width: 15ch;
+  min-width: 15ch;
+  min-height: 8em;
+  max-height: 8em;
+
+  * {
+    font-weight: 400;
+  }
+
+  .value {
+    grid-area: value;
+    font-size: 4em;
+  }
+
+  .unit {
+    font-size: 0.7em;
+  }
+
+  .description {
+    grid-area: description;
+    overflow-wrap: break-word;
+  }
+
+  @media screen and (max-width: $breakpoint-mobile) {
+    & {
+      grid-template-areas: "description value";
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 1em 0.2em;
+    }
+
+    .value {
+      justify-self: end;
+      font-size: 2em;
+    }
+
+    .description {
+      justify-self: start;
+    }
+  }
+}
