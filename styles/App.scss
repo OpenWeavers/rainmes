@@ -96,3 +96,41 @@ h6 {
     background-color: $color-inactive;
   }
 }
+
+@mixin grid-center {
+  align-items: center;
+  justify-items: center;
+}
+
+.StationLabel {
+  background: $color-inactive;
+  padding: .4rem .6rem;
+  grid-gap: .2rem 1rem;
+  display: inline-grid;
+  align-items: center;
+  width: 30ch;
+  outline: none;
+
+  &:hover, &:focus, &.selected {
+    background: $color-active;
+  }
+
+  .StationName {
+    font-size: (30em/20);
+    font-weight: 400;
+    grid-column: 1;
+    grid-row: 1;
+    word-break: break-word;
+  }
+
+  .StationPlace {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  svg {
+    grid-column: 2;
+    grid-row: span 2;
+    justify-self: right;
+  }
+}
