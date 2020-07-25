@@ -463,3 +463,67 @@ h6 {
   overflow: auto;
   height: 100%;
 }
+
+.Compare {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  height: 100%;
+
+  #left {
+    grid-column: 1;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  #selector {
+    display: none;
+  }
+
+  #right {
+    grid-column: 2;
+    height: 100%;
+    overflow-y: auto;
+
+    &.totalStats {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: repeat(auto-fill,1fr);
+      justify-items: center;
+      text-align: center;
+      margin-top: 1ch;
+      grid-gap: 1em;
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-tablet) {
+    & {
+      grid-template-columns: 1fr;
+    }
+    #selector {
+      grid-row: 1;
+      display: inherit;;
+    }
+    #left {
+      position: relative;
+      grid-column: 1;
+      grid-row: 1;
+      left: -100%;
+      z-index: 1;
+      transition: 240ms all ease-in-out;
+
+      &.active {
+        left: 0;
+      }
+    }
+    #right {
+      grid-row: 1;
+      grid-column: 1;
+      text-align: center;
+
+      &.totalStats {
+        grid-auto-flow: row;
+      }
+    }
+  }
+}
