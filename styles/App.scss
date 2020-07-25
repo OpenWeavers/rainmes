@@ -441,3 +441,25 @@ h6 {
   height: 100%;
   background: $color-inactive;
 }
+
+.Page {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3.5em auto;
+
+  .NavBar {
+    grid-row: 1;
+  }
+
+  .main-content {
+    grid-row: 2;
+    overflow: hidden;
+  }
+}
+
+.UserHome {
+  overflow: auto;
+  height: 100%;
+}
