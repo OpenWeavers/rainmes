@@ -87,3 +87,12 @@ h6 {
   padding: .75em 3rem .75rem .5rem;
   @include input-element;
 }
+
+.Select {
+  padding: .75em 3rem .75rem .5rem;
+  @include input-element;
+
+  option {
+    background-color: $color-inactive;
+  }
+}
