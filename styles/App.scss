@@ -66,3 +66,24 @@ h6 {
     color: $color-pure;
   }
 }
+
+@mixin input-element {
+  background-color: $color-inactive;
+  border: 1px solid $color-inactive;
+  outline: none;
+
+  &:hover {
+    border: 1px solid $color-active;
+  }
+
+  &:focus {
+    border: 1px solid $color-active;
+    background-color: $color-active;
+  }
+}
+
+.Input {
+  //align-self: center;
+  padding: .75em 3rem .75rem .5rem;
+  @include input-element;
+}
