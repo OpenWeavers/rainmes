@@ -139,7 +139,9 @@ h6 {
   background: $color-main;
   color: $color-normal;
   display: inline-grid;
-  grid-template-areas: "value" "description";
+  grid-template-areas: "value"
+                       "description";
+  grid-template-columns: 100%;
   @include grid-center;
   padding: 1rem 3rem 1.5rem 3rem;
   max-width: 15ch;
@@ -154,6 +156,7 @@ h6 {
   .value {
     grid-area: value;
     font-size: 4em;
+    max-width: 100%
   }
 
   .unit {
@@ -168,6 +171,7 @@ h6 {
   @media screen and (max-width: $breakpoint-mobile) {
     & {
       grid-template-areas: "description value";
+      grid-template-columns: auto;
       min-width: 100%;
       box-sizing: border-box;
       padding: 1em 0.2em;
@@ -187,6 +191,7 @@ h6 {
 
 .Avatar-container {
   outline: none;
+
   .Avatar {
     display: inline-grid;
     text-align: center;
@@ -485,15 +490,17 @@ h6 {
     grid-column: 2;
     height: 100%;
     overflow-y: auto;
+    text-align: center;
 
-    &.totalStats {
+    &>.totalStats {
       display: grid;
-      grid-auto-flow: column;
-      grid-template-columns: repeat(auto-fill,1fr);
+      grid-template-columns: repeat(auto-fill, minmax(24ch, 1fr));
+      grid-auto-rows: max-content;
       justify-items: center;
       text-align: center;
       margin-top: 1ch;
-      grid-gap: 1em;
+      grid-row-gap: 1ch;
+      grid-column-gap: 1ch ;
     }
   }
 
@@ -520,11 +527,12 @@ h6 {
     #right {
       grid-row: 1;
       grid-column: 1;
-      text-align: center;
+    }
+  }
 
-      &.totalStats {
-        grid-auto-flow: row;
-      }
+  @media only screen and (max-width: $breakpoint-mobile) {
+    #right>.totalStats {
+      grid-template-columns: 1fr;
     }
   }
 }
