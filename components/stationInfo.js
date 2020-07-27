@@ -17,7 +17,6 @@ export default function StationInfo(props) {
                         />
                      </span>
                 </h2>
-
             </div>
             <div id="chart">
                 <Chart data={props.data} key="rain" unit={props.unit}/>
