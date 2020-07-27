@@ -117,12 +117,16 @@ export default class Compare extends React.Component {
             )
         } else {
             let main_content = (
-                <div id="right" className="totalStats">
-                    {totalStats.map(stat=><Card
-                        value={stat.value}
-                        unit={stat.unit}
-                        description={stat.description}
-                    />)}
+                <div id="right">
+                    <h1>Summary Stats</h1>
+                    <div className="totalStats">
+                        {totalStats.map((stat, i) => <Card
+                            key={i}
+                            value={stat.value}
+                            unit={stat.unit}
+                            description={stat.description}
+                        />)}
+                    </div>
                 </div>
             );
             if (selectIndex !== null) {
