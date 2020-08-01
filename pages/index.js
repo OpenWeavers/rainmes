@@ -8,7 +8,7 @@ import StationList from "../components/stationList";
 import Button from "../components/button";
 import Card from "../components/card";
 
-export default class Compare extends React.Component {
+export default class Index extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
