@@ -4,6 +4,7 @@ import {useRouter} from 'next/router'
 import {useAuth0} from '@auth0/auth0-react';
 import Avatar from "./avatar";
 import * as classNames from "classnames";
+import Link from "next/link";
 
 export default function NavBar(props) {
     const {isAuthenticated, isLoading, loginWithRedirect, user} = useAuth0();
@@ -21,26 +22,20 @@ export default function NavBar(props) {
                 </label>
                 <img src="/logo.svg" className="logo" alt="logo"/>
                 <div className="menu">
-                    <a
-                        href="/"
-                        className={classNames({"active": route==="/"})}
-                    >
-                        Dashboard
-                    </a>
+                    <Link href="/">
+                        <a className={classNames({"active": route === "/"})}>Dashboard</a>
+                    </Link>
                     {!isLoading && isAuthenticated ? (
                         <>
-                            <a
-                                href="/userHome"
-                               className={classNames({"active": route==="/userHome"})}
-                            >
-                                My Station
-                            </a>
-                            <a href="#">Data Entry</a>
+                            <Link href="/userHome">
+                                <a className={classNames({"active": route === "/userHome"})}>My Station</a>
+                            </Link>
+                            <Link href="#">Data Entry</Link>
                             <Avatar image={user.picture} name={user.name} dropdown/>
                         </>
                     ) : (
                         isLoading ? (
-                                <span>...</span>
+                            <span>...</span>
                         ) : (
                             <>
                                 <a onClick={loginWithRedirect}>Login</a>
