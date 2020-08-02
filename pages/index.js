@@ -107,16 +107,17 @@ export default class Index extends React.Component {
             stationLoaded,
             totalStats
         } = this.state;
+        let main_content;
         if (error) {
-            return (
+            main_content = (
                 <div>{error.message}</div>
             )
         } else if (!isLoaded) {
-            return (
+            main_content = (
                 <div>Loading...</div>
             )
         } else {
-            let main_content = (
+            main_content = (
                 <div id="right">
                     <h1>Summary Stats</h1>
                     <div className="totalStats">
@@ -143,38 +144,38 @@ export default class Index extends React.Component {
                     />
                 ) : (<div>Loading Station Info...</div>);
             }
-            return (
-                <div className="Page">
-                    <NavBar>
-                        <a href="#">Dashboard</a>
-                        <a href="#" className="active">Compare</a>
-                        <a href="#">Data Entry</a>
-                        <Avatar image="https://i.pravatar.cc/300" name="Username" dropdown/>
-                    </NavBar>
-                    <div className="main-content">
-                        <div className="Compare">
+        }
+        return (
+            <div className="Page">
+                <NavBar>
+                    <a href="#">Dashboard</a>
+                    <a href="#" className="active">Compare</a>
+                    <a href="#">Data Entry</a>
+                    <Avatar image="https://i.pravatar.cc/300" name="Username" dropdown/>
+                </NavBar>
+                <div className="main-content">
+                    <div className="Compare">
 
-                            <div id="left" className={classNames({"active": this.state.expanded})}>
-                                <StationList
-                                    stations={stationList}
-                                    onClick={i => this.stationChanged(i)}
-                                    selectIndex={this.state.selectIndex}
+                        <div id="left" className={classNames({"active": this.state.expanded})}>
+                            <StationList
+                                stations={stationList}
+                                onClick={i => this.stationChanged(i)}
+                                selectIndex={this.state.selectIndex}
+                            />
+                        </div>
+
+                        <div id="right">
+                            <div id="selector">
+                                <Button
+                                    content="Select station"
+                                    onClick={this.toggleList}
                                 />
                             </div>
-
-                            <div id="right">
-                                <div id="selector">
-                                    <Button
-                                        content="Select station"
-                                        onClick={this.toggleList}
-                                    />
-                                </div>
-                                {main_content}
-                            </div>
+                            {main_content}
                         </div>
                     </div>
                 </div>
-            )
-        }
+            </div>
+        )
     }
 }
