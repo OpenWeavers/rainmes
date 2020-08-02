@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/App.scss'
+import { Auth0Provider } from '@auth0/auth0-react';
 
 export default ({ Component, pageProps }) => (
     <Auth0Provider
