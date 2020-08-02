@@ -4,7 +4,9 @@ import Avatar from "../components/avatar";
 import NavBar from "../components/navbar";
 import StationInfo from "../components/stationInfo";
 
-export default class UserHome extends React.Component {
+import { withAuthenticationRequired } from '@auth0/auth0-react';
+
+class UserHome extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -124,3 +126,7 @@ export default class UserHome extends React.Component {
         )
     }
 }
+
+export default withAuthenticationRequired(UserHome, {
+    onRedirecting: () => <div>Redirecting you to the login page...</div>,
+});
