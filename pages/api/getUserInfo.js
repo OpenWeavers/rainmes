@@ -5,7 +5,9 @@ export default (req, res) => {
         data: {
             stationId: "Devaragudda:Kalasa",
             years: [2019,2018],
-            unit: "in"
+            unit: "in",
+            stationName: "Devaragudda",
+            stationPlace: "Kalasa"
         }
     })
 }

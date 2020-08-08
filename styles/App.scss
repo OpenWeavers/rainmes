@@ -139,8 +139,7 @@ h6 {
   background: $color-main;
   color: $color-normal;
   display: inline-grid;
-  grid-template-areas: "value"
-                       "description";
+  grid-template-areas: "value" "description";
   grid-template-columns: 100%;
   @include grid-center;
   padding: 1rem 3rem 1.5rem 3rem;
@@ -191,6 +190,7 @@ h6 {
 
 .Avatar-container {
   outline: none;
+  text-align: center;
 
   .Avatar {
     display: inline-grid;
@@ -453,7 +453,7 @@ h6 {
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows:max-content auto;
+  grid-template-rows: max-content auto;
 
   .NavBar {
     grid-row: 1;
@@ -492,7 +492,7 @@ h6 {
     overflow-y: auto;
     text-align: center;
 
-    &>.totalStats {
+    & > .totalStats {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(24ch, 1fr));
       grid-auto-rows: max-content;
@@ -500,7 +500,7 @@ h6 {
       text-align: center;
       margin-top: 1ch;
       grid-row-gap: 1ch;
-      grid-column-gap: 1ch ;
+      grid-column-gap: 1ch;
     }
   }
 
@@ -531,8 +531,36 @@ h6 {
   }
 
   @media only screen and (max-width: $breakpoint-mobile) {
-    #right>.totalStats {
+    #right > .totalStats {
       grid-template-columns: 1fr;
     }
+  }
+}
+
+.Profile {
+  display: grid;
+  grid-template-columns: 1fr;
+  @include grid-center;
+  align-items: center;
+
+  #left {
+    grid-column: 1;
+    align-self: center;
+    font-size: 1.2em;
+
+    table td {
+      &:nth-child(2) {
+        text-align: right;
+      }
+
+      &:nth-child(1) {
+        text-align: left;
+        font-weight: 600;
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr;
   }
 }

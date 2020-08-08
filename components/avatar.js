@@ -8,7 +8,7 @@ export default function Avatar(props) {
 
     if (props.dropdown) {
         dropdown = (<ul className="dropdown-menu">
-            <li><Link href="/profile"><a>Manage Account</a></Link></li>
+            <li><Link href="/profile"><a>Profile</a></Link></li>
             <li><a href="#" onClick={() => logout({returnTo: 'http://localhost:3000'})}>Log out</a></li>
         </ul>)
     }

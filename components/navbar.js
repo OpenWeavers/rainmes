@@ -30,7 +30,7 @@ export default function NavBar(props) {
                             <Link href="/userHome">
                                 <a className={classNames({"active": route === "/userHome"})}>My Station</a>
                             </Link>
-                            <Link href="#">Data Entry</Link>
+                            <Link href="#"><a>Data Entry</a></Link>
                             <Avatar image={user.picture} name={user.name} dropdown/>
                         </>
                     ) : (
