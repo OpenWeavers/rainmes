@@ -5,7 +5,6 @@ import Avatar from "../components/avatar";
 import NavBar from "../components/navbar";
 import StationInfo from "../components/stationInfo";
 import StationList from "../components/stationList";
-import Button from "../components/button";
 import Card from "../components/card";
 
 export default class Index extends React.Component {
@@ -166,8 +165,9 @@ export default class Index extends React.Component {
 
                         <div id="right">
                             <div id="selector">
-                                <Button
-                                    content="Select station"
+                                <input
+                                    type="button"
+                                    value="Select station"
                                     onClick={this.toggleList}
                                 />
                             </div>

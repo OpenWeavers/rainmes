@@ -53,7 +53,7 @@ h6 {
   font-weight: 300;
 }
 
-.Button {
+input[type=button] {
   align-self: center;
   background: $color-pure;
   border: 1px solid $color-main;
@@ -542,6 +542,7 @@ h6 {
   grid-template-columns: 1fr;
   @include grid-center;
   align-items: center;
+  height: 100%;
 
   #left {
     grid-column: 1;
