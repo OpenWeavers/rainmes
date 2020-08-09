@@ -52,13 +52,15 @@ function Profile() {
     return (
         <div className="Page">
             <NavBar/>
-            <div className="Profile">
-                <div id="left">
-                    <Avatar name={user.name} image={user.picture}/>
-                    {content}
-                </div>
-                <div id="right">
+            <div className="main-content">
+                <div className="Profile">
+                    <div id="left">
+                        <Avatar name={user.name} image={user.picture}/>
+                        {content}
+                    </div>
+                    <div id="right">
 
+                    </div>
                 </div>
             </div>
         </div>
